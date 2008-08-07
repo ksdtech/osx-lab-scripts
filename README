@@ -1,0 +1,16 @@
+phd_hooks.rb
+
+# Login and shutdown script for Mac OS X 10.4 to do two things:
+#   1. Redirect network users' ~/Library/Caches folder to the local hard disk
+#      for better performance, and
+#   2. Expire (remove) portable home directories on lab computers after 
+#      a period of inactivity (default to 30 days)
+
+# The cache folder part is adapted from a shell script by Nigel Kirsten
+# http://lists.apple.com/archives/Macos-x-server/2006/Feb/msg01025.html
+
+# The expiring mobile directories part is adapted from a login hook by 
+# Zack Smith
+# http://www.afp548.com/article.php?story=20070703021643108
+
+# Rewritten in ruby (because shell scripts make me crazy) by Peter Zingg
