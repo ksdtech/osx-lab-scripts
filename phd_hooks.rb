@@ -199,7 +199,10 @@ def user_login_hook(username)
     logger "LoginHook: Unknown account type #{username}"
   end
   
-  remove_expired_mobile_users(EXPIRE_AFTER_DAYS, username)
+  if EXPIRE_ON_LOGIN
+    remove_expired_mobile_users(EXPIRE_AFTER_DAYS, username)
+  end
+  
   logger "LoginHook: Finished for #{username}"
   exit 0
 end
